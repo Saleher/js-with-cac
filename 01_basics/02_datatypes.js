@@ -15,5 +15,5 @@ Primitive data types
 
 // Object
 
-console.log(typeof undefined)
-console.log(typeof null)
+console.log(typeof undefined)  // type =>  undefined
+console.log(typeof null) // type =>  object
