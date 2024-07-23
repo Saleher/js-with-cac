@@ -49,3 +49,71 @@ Typeof
 
 
 */
+
+
+
+const heros = ["Iron Man", "Loki", "Caption America"];
+
+let myObj = {
+    name: "hitesh",
+    age: 22
+}
+
+const myFunction = function(){
+    console.log("Hello World!");
+}
+
+
+
+
+// ======================================================
+// Primitive data type gose on Stack
+// Non-Primitive data Type goes in Heap
+
+
+
+
+
+let A = "value1";
+let B = A;
+B = "value2";   //assigned a copy of variable A
+
+console.log(A); // value1
+console.log(B); // value2
+
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne;  // assigned the address or reference of userOne
+
+userTwo.userEmail = "user2@yahoo.com";
+
+
+console.log(userOne.email); // user2@yahoo.com
+console.log(userTwo.email); // user2@yahoo.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
