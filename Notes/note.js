@@ -88,14 +88,65 @@
 // }
 
 
-/* array.every(); 
-=> Test whether all** elements in array pass test implemented by provided fuction
-=> Returns boolean value
+// /* array.every(); 
+// => Test whether all** elements in array pass test implemented by provided fuction
+// => Returns boolean value
+// */
+
+// const isBelowThreshold = (currentValue) => currentValue < 10;
+
+// const array1 = [1, 2, 7, 8, 9, 23];
+// console.log(array1.every(isBelowThreshold)); // false
+
+
+// array.fill();
+/*
+instances changes all elements within a range of indices in an array to a static value. It returns the modified array.
+****** Mutated the original array
 */
+// const array1 = [1, 2, 7, 8, 9, 23];
+// // console.log(array1.fill(0, 2, 4)); // [1, 2, 0, 0, 9, 23]
+// console.log(array1.fill(5, 1));
+// console.log(array1);
 
-const isBelowThreshold = (currentValue) => currentValue < 40;
 
-const array1 = [1, 2, 7, 8];
+
+// array.filter();
+/*
+=> Creates a shallow copy of a portion of a given array (Do not mutated the original array)
+=> Filtered down to just the elements from the given array that passed the test by provided function
+*/
+// const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter((word) => word.length > 6);
+// console.log(result);
+// console.log(words);
+
+
+// function isBigEnough(value){
+//     return value >= 10
+// }
+
+// const filtered = [12, 5, 6, 7, 8, 23, 99].filter(isBigEnough);
+// console.log(filtered);
+
+// Find all prime number(divide by number itself only) in array 
+const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+function isPrime(num){
+    for(let i = 2; num > i ; i++){
+        if(num % i === 0){
+            return false;
+        }
+    }
+    return num > 1
+}
+
+console.log(array.filter(isPrime));
+
+
+
+
 
 
 
