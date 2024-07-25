@@ -31,10 +31,10 @@ const myArray = [0, 1, 2, 3, 4];
 
 // slice , splice
 
-console.log("A ", myArray);
+// console.log("A ", myArray);
 
 const myn1 = myArray.slice(1, 3);
-
+// console.log("A ", myArray);
 console.log(myn1);
 
 
