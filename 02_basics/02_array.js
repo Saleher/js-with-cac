@@ -20,6 +20,14 @@ const colors = ["Red","Green","Blue", ["djh", "jss"]];
 // asking if this is array
 // console.log(Array.isArray('Saleher'));
 // console.log(Array.from("Saleher"));
-console.log(Array.from({name: "Saleher"}));  // [] return empty array
+// console.log(Array.from({name: "Saleher"}));  // [] return empty array
+
+
+const a = "Elem1";
+const b = "Elem2";
+const c = "Elem3";
+
+
+console.log(Array.of(a,b,c));
 
 
