@@ -131,18 +131,58 @@ instances changes all elements within a range of indices in an array to a static
 // console.log(filtered);
 
 // Find all prime number(divide by number itself only) in array 
-const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+// const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-function isPrime(num){
-    for(let i = 2; num > i ; i++){
-        if(num % i === 0){
-            return false;
-        }
-    }
-    return num > 1
-}
+// function isPrime(num){
+//     for(let i = 2; num > i ; i++){
+//         if(num % i === 0){
+//             return false;
+//         }
+//     }
+//     return num > 1
+// }
 
-console.log(array.filter(isPrime));
+// console.log(array.filter(isPrime));
+
+
+// -----------------------------------
+//// Find => return first element in the provided array
+
+// const array1 = [5, 12, 8, 130, 44];
+
+// const found = array1.find((el) => el > 10);
+// console.log(found); // 12
+
+
+
+/*******************
+ * array.findIndex();
+ * returns the index of first element in an array that satisfies the provided function
+ * *******************/
+// const array1 = [5, 12, 8, 130, 44];
+// const isLargeNumber = (elem) => elem === 13;
+// const foundIndex = array1.findIndex(isLargeNumber);
+// console.log(foundIndex);
+
+
+/*******************
+ * array.findLast();
+ * reverse the array order and returns the value of the first element that satisfies the provided function
+ * *******************/
+const array1 = [5, 12, 50, 130, 44];
+
+const found = array1.findLast((element) => element > 45);
+
+console.log(found);
+console.log(array1);
+
+
+
+
+
+
+
+
 
 
 
