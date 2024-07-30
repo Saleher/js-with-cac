@@ -33,7 +33,7 @@ map.set('Fr','Franc')
 // console.log(map);
 
 for (const [key, value] of map){
-    console.log(key , value);
+    // console.log(key , value);
 }
 
 
@@ -41,3 +41,55 @@ const myObject = {
     'game1' : 'NFS',
     'game2' : 'Spiderman'
 }
+
+
+const coding = ["java", "ruby", "java", "python", "cpp"];
+// coding.forEach((item) => console.log(item));
+
+const myCoading = [
+    {
+        language: "Javascript",
+        languageFileName: "JS"
+    },
+    {
+        language: "Python",
+        languageFileName: "PHY"
+    },
+    {
+        language: "Java",
+        languageFileName: "JV"
+    },
+    {
+        language: "c++",
+        languageFileName: "CPP"
+    },
+    {
+        language: "Ruby",
+        languageFileName: "rb"
+    },
+]
+
+
+// myCoading.forEach((item) => console.log(item.language))
+
+
+
+
+// const nums = [1,2,3,4,5,6,7,8,9,10];
+
+
+// const newNums = nums.filter((num) => {
+//     return num > 4
+// });
+
+// console.log(newNums);
+
+
+
+const myNumbers = [1,2,3,4,5,6,7,8,9,10];
+
+const newNums = myNumbers
+.map((num) => num * 10)
+.map((num) => num + 1)
+.filter((num) => num >= 40);
+console.log(newNums);
