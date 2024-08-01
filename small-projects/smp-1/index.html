@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="red">Red</button>
+        <button id="green">GREEN</button>
+        <button id="blue">Blue</button>
+        <button id="black">Black</button>
+        <button id="white">White</button>
+    </div>
+</body>
+
+
+<script>
+    
+</script>
+
+<script>
+   const buttonTag = document.querySelectorAll("button");
+   const pageBody = document.querySelector("body"); 
+   
+
+   buttonTag.forEach(function(button){
+    button.addEventListener('click', function(e){
+        // console.log(e)
+        const targetColor = e.target.id;
+        button.style.backgroundColor = targetColor;
+        pageBody.style.backgroundColor = targetColor;
+    })
+
+   })
+
+
+
+
+   // TODO : Make the button backgound color as pe their id
+
+
+
+
+
+
+
+</script>
+
+</html>
