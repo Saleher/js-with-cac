@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 0  15px 0;
+            padding: 0;
+            
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        }
+        #clock {
+        height: 200px;
+        width: 200px;
+        background: #000;
+        border-radius: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: 0px 2px 16px 13px rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="conatainer">
+        <div id="clock"></div>
+    </div>
+</body>
+
+<script>
+    const clock = document.getElementById('clock');
+    setInterval(function(){
+        let date = new Date();
+        let time = date.toLocaleTimeString();
+        clock.innerHTML = `<h2>${time}<h2>`;
+    }, 1000)
+</script>
+
+
+</html>
