@@ -33,7 +33,7 @@
 </body>
 
 <script>
-    const randomNumber = parseInt(Math.random() * 100 + 1);
+    let randomNumber = parseInt(Math.random() * 100 + 1);
     const userInput = document.getElementById('guessField');
     const submitBtn = document.getElementById('submit');
     const guessSlot = document.getElementById('guesses');
@@ -95,7 +95,7 @@
 
     function displayGuess(guess){
         userInput.value = '';
-        guessSlot.innerHTML += `${guess}, `;
+        guessSlot.innerHTML += `${guess} , `;
         numGuess++;
         remaining.innerHTML = `${11 - numGuess}`
     }
@@ -106,9 +106,31 @@
     }
 
     function endGame(){
-
+        userInput.value = "";
+        userInput.setAttribute('disabled' , '');
+        p.classList.add('button');
+        p.innerHTML = `<h1 id="newGame">Start New Game</h1>`
+        startOver.appendChild(p);
+        playGame = false;
+        newGame();
     }
 
+
+    function newGame(){
+        const newGameButton = document.querySelector('#newGame');
+        newGameButton.addEventListener('click', function(e){
+            randomNumber = parseInt(Math.random() * 100 + 1);
+            prevGuess = [];
+            numGuess = 1;
+            guessSlot.innerHTML = "";
+            remaining.innerHTML = `${11 - numGuess}`;
+            userInput.removeAttribute('disabled');
+            startOver.removeChild(p);
+
+            playGame = true;
+        });
+
+    }
 
 
 
