@@ -27,13 +27,29 @@
         </ul>
 
 
-
-
         <h1 style="margin-top: 120px;">Set time out</h1>
-        <button id="stop"></button>
+        <button id="stop">Stop</button>
+
+
+        <h2 style="margin-top: 50px;">setInterval</h2>
+        <button id="start">Start</button>
+        <button id="end">End</button>
+
+
+        <h2 style="margin-top: 50px;">Change Background Color</h2>
+        <button id="changeBg">Change</button>
+        <button id="stopChangeBg">Stop Change</button>
+
 
     </div>
 </body>
+
+<script>
+    // Generate a random color in hex value
+    const randowmColor = function(){
+        
+    }
+</script>
 
 
 
@@ -84,8 +100,50 @@ Event Capturing -->
     }
 
 
-    setTimeout(changeText, 2000)
+    const chageMe = setTimeout(changeText, 2000);
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(chageMe);
+    });
+
+
 </script>
+
+
+<!-- set Interval  -->
+ <script>
+
+
+    const startButton = document.getElementById('start');
+    const endButton = document.getElementById('end');
+    let intervetId;
+
+
+   
+    const sayDate = function(){
+        const date = new Date();
+        const time = date.toLocaleTimeString();
+        console.log("Hello!", time)
+    }
+
+    startButton.addEventListener('click', function(){
+       intervetId = setInterval(sayDate, 1000);
+    })
+    endButton.addEventListener('click', function(){
+        clearInterval(intervetId);
+    })
+
+
+
+
+
+
+
+
+    // clearInterval(intervetId);
+
+
+ </script>
 
 
 </html>
