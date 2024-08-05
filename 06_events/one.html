@@ -4,13 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img{
+            max-width: 100%;
+        }
+        #images {
+            display: flex ;
+        }
+        #images li{
+            width: 25%;
+        }
+    </style>
 </head>
 <body>
     <div class="conatiner">
         <h2>Amazing</h2>
         <ul id="images">
-            <li><img src="https://www.pexels.com/photo/crowd-surrounded-by-buildings-during-night-time-2070033/"></li>
+            <li><img src="../images/stones.jpg" alt=""  id="image1"></li>
+            <li><img src="../images/rose.jpg" alt=""  id="image2"></li>
+            <li><img src="../images/tree.jpg" alt=""  id="image3"></li>
+            <li><img src="../images/umbrella.jpg" alt=""  id="image4"></li>
         </ul>
+
+
+
+
+        <h1 style="margin-top: 120px;">Set time out</h1>
+        <button id="stop"></button>
+
     </div>
 </body>
+
+
+
+<!-- // events to learn -->
+<!-- type , timestamp, defaultPrevented -->
+<!-- // target, toElement, screenX, currentTarget -->
+
+
+
+<!-- Event propagation
+Event Bubbling
+Event Capturing -->
+
+<script>
+    // document.getElementById('images').addEventListener('click' , function(e){
+    //     console.log('Clicked inside ul');
+    // }, false);
+    // document.getElementById('image3').addEventListener('click' , function(e){
+    //     e.stopPropagation();
+    //     console.log('Image clicked');
+    // }, false);
+
+
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+      
+    });
+
+
+
+</script>
+
+
+
+<script>
+
+    const sayHello = function(){
+        console.log("Hello World!")
+    }
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Hello Universe!";
+    }
+
+
+    setTimeout(changeText, 2000)
+</script>
+
+
 </html>
