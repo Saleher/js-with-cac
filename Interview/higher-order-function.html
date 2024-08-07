@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Defination: Any function returns a function when executed, takes a function as an argument , or both.
+        >> If you have used any of the Array methods like map or filter, or passed a callback function to jQuery’s $.get, you have already worked with Higher Order Functions.
+        => When we treat function just like variables
+    </p>
+</body>
+
+
+
+<script>
+
+    // Normal function 
+    function salary(num){
+        return num * 0.7
+    }
+
+
+    // Hof 
+    setTimeout(salary, 3000);
+
+
+    // 
+    const mySalaries = [20, 30, 40 ,50 , 90];
+    mySalaries.filter(n => n > 50).filter().map();
+    // mySalaries.filter(salaty).filter(tax).map();
+
+
+    // () => {};
+    // (func) => {};
+    // (func) => async() => {}
+
+
+    const asyncHandler = (fn) => async(req, res, next) => {
+        try {
+            await fn(req,res,next)
+        } catch (error) {
+            
+        }
+    }
+
+
+
+
+
+</script>
+
+
+</html>
