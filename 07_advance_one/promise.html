@@ -10,122 +10,125 @@
     There are three state in promise: 01. Pending 02. Fullfield 03. Rejected
 
     1. What is a Promise in JavaScript?
-Answer:
-A Promise in JavaScript is an object representing the eventual completion (or failure) of an asynchronous operation and its 
-resulting value. It allows you to write asynchronous code in a more synchronous fashion, avoiding the so-called "callback hell".
+            Answer:
+            A Promise in JavaScript is an object representing the eventual completion (or failure) of an asynchronous operation and its 
+            resulting value. It allows you to write asynchronous code in a more synchronous fashion, avoiding the so-called "callback hell".
 
-2. How do you create a Promise?
-Answer:
-A Promise can be created using the Promise constructor, which takes a function (executor) that has two arguments: resolve and reject. Here is an example:
+            2. How do you create a Promise?
+            Answer:
+            A Promise can be created using the Promise constructor, which takes a function (executor) that has two arguments: resolve and reject. Here is an example:
 
-javascript
-Copy code
-const myPromise = new Promise((resolve, reject) => {
-    // asynchronous operation
-    setTimeout(() => {
-        resolve("Success!");
-        // or
-        // reject("Error!");
-    }, 1000);
-});
-3. What are the possible states of a Promise?
-Answer:
-A Promise can be in one of three states:
+            javascript
+            Copy code
+            const myPromise = new Promise((resolve, reject) => {
+                // asynchronous operation
+                setTimeout(() => {
+                    resolve("Success!");
+                    // or
+                    // reject("Error!");
+                }, 1000);
+            });
+            3. What are the possible states of a Promise?
+            Answer:
+            A Promise can be in one of three states:
 
-Pending: Initial state, neither fulfilled nor rejected.
-Fulfilled: The operation completed successfully.
-Rejected: The operation failed.
-4. How do you handle the results of a Promise?
-Answer:
-You can handle the results of a Promise using the then and catch methods:
+            Pending: Initial state, neither fulfilled nor rejected.
+            Fulfilled: The operation completed successfully.
+            Rejected: The operation failed.
+            4. How do you handle the results of a Promise?
+            Answer:
+            You can handle the results of a Promise using the then and catch methods:
 
-javascript
-Copy code
-myPromise
-    .then(result => {
-        console.log(result); // "Success!"
-    })
-    .catch(error => {
-        console.error(error); // "Error!"
-    });
-5. Explain the difference between Promise.all and Promise.race.
-Answer:
+            javascript
+            Copy code
+            myPromise
+                .then(result => {
+                    console.log(result); // "Success!"
+                })
+                .catch(error => {
+                    console.error(error); // "Error!"
+                });
+            5. Explain the difference between Promise.all and Promise.race.
+            Answer:
 
-Promise.all: Takes an array of promises and returns a single Promise that resolves when all the promises in the array have resolved, or rejects if any promise in the array rejects.
-javascript
-Copy code
-Promise.all([promise1, promise2, promise3])
-    .then(results => {
-        console.log(results); // Array of results
-    })
-    .catch(error => {
-        console.error(error); // First encountered error
-    });
-Promise.race: Takes an array of promises and returns a single Promise that resolves or rejects as soon as one of the promises in the array resolves or rejects.
-javascript
-Copy code
-Promise.race([promise1, promise2, promise3])
-    .then(result => {
-        console.log(result); // Result of the first settled promise
-    })
-    .catch(error => {
-        console.error(error); // Error of the first settled promise
-    });
-6. What is the purpose of finally in Promises?
-Answer:
-The finally method is used to specify a block of code that will be executed regardless of whether the Promise is resolved or rejected. This is useful for cleanup actions.
+            Promise.all: Takes an array of promises and returns a single Promise that resolves when all the promises in the array have resolved, or rejects if any promise in the array rejects.
+            javascript
+            Copy code
+            Promise.all([promise1, promise2, promise3])
+                .then(results => {
+                    console.log(results); // Array of results
+                })
+                .catch(error => {
+                    console.error(error); // First encountered error
+                });
+            Promise.race: Takes an array of promises and returns a single Promise that resolves or rejects as soon as one of the promises in the array resolves or rejects.
+            javascript
+            Copy code
+            Promise.race([promise1, promise2, promise3])
+                .then(result => {
+                    console.log(result); // Result of the first settled promise
+                })
+                .catch(error => {
+                    console.error(error); // Error of the first settled promise
+                });
+            6. What is the purpose of finally in Promises?
+            Answer:
+            The finally method is used to specify a block of code that will be executed regardless of whether the Promise is resolved or rejected. This is useful for cleanup actions.
 
-javascript
-Copy code
-myPromise
-    .then(result => {
-        console.log(result);
-    })
-    .catch(error => {
-        console.error(error);
-    })
-    .finally(() => {
-        console.log("Cleanup actions");
-    });
-7. How can you chain multiple Promises?
-Answer:
-You can chain multiple Promises by returning another Promise in the then method:
+            javascript
+            Copy code
+            myPromise
+                .then(result => {
+                    console.log(result);
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+                .finally(() => {
+                    console.log("Cleanup actions");
+                });
+            7. How can you chain multiple Promises?
+            Answer:
+            You can chain multiple Promises by returning another Promise in the then method:
 
-javascript
-Copy code
-myPromise
-    .then(result => {
-        console.log(result);
-        return anotherPromise;
-    })
-    .then(result => {
-        console.log(result);
-        return yetAnotherPromise;
-    })
-    .catch(error => {
-        console.error(error);
-    });
-8. What is async/await, and how does it relate to Promises?
-Answer:
-async and await are syntactic sugar built on top of Promises, allowing you to write asynchronous code that looks synchronous. An async function returns a Promise, and await pauses the execution of the async function, waiting for the Promise to resolve.
+            javascript
+            Copy code
+            myPromise
+                .then(result => {
+                    console.log(result);
+                    return anotherPromise;
+                })
+                .then(result => {
+                    console.log(result);
+                    return yetAnotherPromise;
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+            8. What is async/await, and how does it relate to Promises?
+            Answer:
+            async and await are syntactic sugar built on top of Promises, allowing you to write asynchronous code that looks synchronous. An async function returns a Promise, and await pauses the execution of the async function, waiting for the Promise to resolve.
 
-javascript
-Copy code
-async function myAsyncFunction() {
-    try {
-        const result = await myPromise;
-        console.log(result);
-    } catch (error) {
-        console.error(error);
-    } finally {
-        console.log("Cleanup actions");
-    }
-}
-These questions and answers cover key concepts of Promises in JavaScript, providing a solid foundation for discussing asynchronous programming during an interview.
+            javascript
+            Copy code
+            async function myAsyncFunction() {
+                try {
+                    const result = await myPromise;
+                    console.log(result);
+                } catch (error) {
+                    console.error(error);
+                } finally {
+                    console.log("Cleanup actions");
+                }
+            }
+            These questions and answers cover key concepts of Promises in JavaScript, providing a solid foundation for discussing asynchronous programming during an interview.
 
 
 </body>
 <script>
+
+
+  
     
 </script>
 </html>
