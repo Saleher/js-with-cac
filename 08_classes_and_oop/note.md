@@ -8,7 +8,9 @@ Object literal
 
 
 ## 4 pillars
+
 1. Abstraction
+-------------------------------
 Abstraction is the concept of hiding the complex implementation details and showing only the essential features of an object. It helps in reducing programming complexity and effort.
 
 code
@@ -36,10 +38,11 @@ myCar.drive();       // Output: Driving the car
 ----------------------------------------------------
 Here, the complex logic behind starting the engine and driving is hidden. The user interacts with a simple interface (startEngine and drive methods) without knowing the internal implementation.
 
+==> For example, you can execute the Math object methods in JavaScript by accessing the method using its name but can't see how it is implemented. Same way array methods like push(), pop(), etc., can be executed, but you don't know how it is implemented internally.
+
 
 02. Encapsulation
 Encapsulation is the bundling of data (variables) and methods (functions) that operate on the data into a single unit, i.e., a class. It also restricts direct access to some of the object’s components, which is a means of preventing accidental interference and misuse of the data.
-
 
 class Person {
   constructor(name, age) {
