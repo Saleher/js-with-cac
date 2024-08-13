@@ -32,20 +32,58 @@ class Person {
     }
 
     //Setter name
-    setName(){
-        return this._age;
+    setName(newName){
+        this._name = newName;
     }
 
 
+    // Getter the age
+    getAge(){
+        return this._age;
+    }
 
-
-    
-
-
-
-
-
+    // setter age 
+    setAge(newAge){
+        if(newAge > 0){
+            this._age = newAge;
+        }else{
+            console.log('Age should be greater than 0')
+        }
+    }
 }
+const person = new Person('John', 30);
+console.log(`Person Name : ${person.getName()}`)
+person.setAge(31);
+console.log(`Person Age: ${person.getAge()}`);
+
+
+
+// Inheritence
+class Animal{
+    constructor(name){
+        this.name = name;
+    }
+    speak(){
+        console.log(`${this.name} makes noise`);
+    }
+}
+
+class Dog extends Animal{
+    speak(){
+        console.log(`${this.name} bark`);
+    }
+}
+
+const dog = new Dog('Rex');
+dog.speak();
+
+
+
+// Polymorphisam
+
+
+
+
 
 
 

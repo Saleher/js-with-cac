@@ -137,6 +137,8 @@ class Cat extends Animal {
 // Usage
 const animals = [new Animal(), new Dog(), new Cat()];
 
+
+
 animals.forEach(animal => {
   animal.speak();
 });
