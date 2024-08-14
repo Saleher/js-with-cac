@@ -151,9 +151,13 @@ animals.forEach(animal => {
 Here, the speak method is polymorphic—it behaves differently depending on whether the object is an instance of Animal, Dog, or Cat.
 
 
-=================================
+================================================================================
 Summary:
 Abstraction hides the complex details and exposes only the necessary parts.
 Encapsulation bundles data and methods into a single unit and restricts access to certain components.
 Inheritance allows a class to inherit properties and methods from another class.
 Polymorphism enables methods to do different things based on the object it is acting upon
+
+
+
+
