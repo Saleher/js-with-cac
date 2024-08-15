@@ -6,6 +6,32 @@
     <title>React</title>
 </head>
 <body>
-    <button class="">Button Cliecked</button>
+    <button>Button Clicked</button>
 </body>
+
+<script>
+    class React{
+        constructor(){
+            this.library = "React";
+            this.server = "https://localhost:3000"
+
+            //Requirment
+            document.querySelector('button').addEventListener('click', this.handleClick.bind(this));
+        }
+
+
+        handleClick(){
+            console.log("Button Clicked");
+            console.log(this)
+        }
+
+    }
+
+
+    const app = new React();
+
+
+</script>
+
+
 </html>
