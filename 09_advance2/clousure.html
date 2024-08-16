@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>A clousure is the combination of a function bundled together(enclosed) with references to its surrounding state (a lexical enviroment).</p>
+    <p>A clousure gives you access to an outer function's scope from an inner function.</p>    
+    <p>clousure is created every time a function is created.</p>
+
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+</body>
+
+<script>
+
+    // Lexical scoping
+    // function init(){
+    //     let name = "Mozila";
+
+    //     function displayName(){
+    //         console.log(name)
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+
+    // Lexical scoping
+    // function outer(){
+    //     let userName = "Saleher";
+    //     function inner(){
+    //         console.log(userName);
+    //     }
+    //     inner();
+    // }
+    // outer();
+    // console.log(userName);
+
+
+    // Closures
+    // function makeFunc(){
+    //     let name = "Saleher";
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+
+
+    // Practical example 
+    const orangeBtn = document.getElementById('orange');
+    const greenBtn = document.getElementById('green');
+
+    // function chageBgColor(){
+    //     orangeBtn.addEventListener('click', function(){
+    //         document.body.style.backgroundColor = "orange";
+    //     })
+    //     greenBtn.addEventListener('click', function(){
+    //         document.body.style.backgroundColor = "green";
+    //     })
+    // }
+    // chageBgColor();
+
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    orangeBtn.onclick = clickHandler('orange');
+    greenBtn.onclick = clickHandler('green');
+
+  
+
+ 
+
+
+</script>
+
+</html>
